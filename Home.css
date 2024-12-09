@@ -1,0 +1,1186 @@
+/* כללי */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    background: #000;
+    color: #fff;
+    text-align: center; /* מיקום טקסט במרכז */
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  
+  
+  
+  /* בר עליון */
+  .top-bar {
+    background: linear-gradient(90deg, #222, #111);
+    color: #d4af37;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .top-bar.scrolled {
+    background: #111;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+  }
+  
+  .top-bar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+  }
+  
+  /* לוגו ומספר טלפון */
+  .logo-and-contact {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .logo {
+    height: 50px;
+  }
+  
+  .phone-number {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #d4af37;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .phone-number:hover {
+    color: #fff;
+  }
+  
+  /* ניווט */
+  .navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+  }
+  
+  .navigation ul li {
+    position: relative;
+  }
+  
+  .navigation ul li a {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #d4af37;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
+  }
+  
+  .navigation ul li a:hover {
+    color: #fff;
+    border-bottom: 2px solid #d4af37;
+  }
+  
+  /* תפריט נפתח */
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #222;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+    border-radius: 5px;
+    z-index: 999;
+  }
+  
+  .dropdown li a {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+    display: block;
+    color: #d4af37;
+  }
+  
+  .dropdown li a:hover {
+    background: #333;
+    color: #fff;
+  }
+  
+  /* כפתור ייחודי */
+  .btn-primary {
+    background: #d4af3700;
+    color: #111;
+    border-radius: 5px;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .btn-primary:hover {
+    background: #ffffff18;
+    color: #222;
+  }
+  
+  /* תפריט מובייל */
+  .hamburger-menu {
+    display: none;
+    font-size: 1.5rem;
+    color: #d4af37;
+    cursor: pointer;
+  }
+  
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 60px;
+    right: 0;
+    background: #222;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  
+  .mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .mobile-menu ul li {
+    margin: 10px 0;
+  }
+  
+  .mobile-menu ul li a {
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  
+  /* רספונסיבי */
+  @media (max-width: 768px) {
+    .navigation {
+      display: none;
+    }
+  
+    .hamburger-menu {
+      display: block;
+    }
+  
+    .top-bar {
+      height: 50px;
+      padding: 5px 0;
+    }
+  
+    .logo {
+      height: 40px;
+    }
+  
+    .phone-number {
+      font-size: 0.9rem;
+    }
+  
+    .mobile-menu ul li a {
+      font-size: 1rem;
+      padding: 8px 15px;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  /* תפריט ניווט */
+  .navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navigation a {
+    text-decoration: none;
+    color: #d4af37;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s, transform 0.2s;
+  }
+  
+  .navigation a:hover {
+    color: #fff;
+    transform: scale(1.1);
+  }
+  
+  /* חיפוש */
+  .search-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .search-form {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .search-form input {
+    padding: 8px 12px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    font-size: 1rem;
+    width: 180px;
+  }
+  
+  .search-form input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .search-form button {
+    padding: 8px 12px;
+    background: #d4af37;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .search-form button:hover {
+    background: #fff;
+    color: #d4af37;
+  }
+  
+  /* התאמה למובייל */
+  @media (max-width: 768px) {
+    .top-bar-container {
+      flex-direction: column;
+      gap: 15px;
+      text-align: center;
+    }
+  
+    .navigation ul {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+  
+    .search-form input {
+      width: 100px;
+    }
+  
+    .logo-and-contact {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .contact-info .phone-number {
+      font-size: 1rem;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  /* כותרת ראשית */
+  .header {
+    position: relative;
+    color: #d4af37;
+    text-align: center;
+    padding: 40px 20px;
+    height: 100vh;
+  }
+  
+  
+  
+  /* עיצוב הסירטון הראשי הגדול  */
+  @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&family=Montserrat:wght@200;300;400&display=swap');
+  
+  .halakli-hero {
+    position: relative;
+    height: 100vh;
+    background: #000;
+    overflow: hidden;
+  }
+  
+  .background-video {
+    position: absolute;
+    top: 50%; /* מרכז אנכי */
+    left: 50%; /* מרכז אופקי */
+    width: 100vw; /* רוחב מלא של המסך */
+    height: 100vh; /* גובה מלא של המסך */
+    transform: translate(-50%, -50%); /* יישור מדויק */
+    object-fit: cover; /* התאמה מלאה לאזור */
+    opacity: 0.6;
+    z-index: 1;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4); /* שכבת שקיפות כהה */
+    z-index: 2;
+  }
+  
+  .hero-content-centered {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 4rem;
+  }
+  
+  .brand-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .brand-logo img {
+    width: 400px;
+    filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.5));
+    animation: floatLogo 5s ease-in-out infinite;
+  }
+  
+  .hebrew-text-small {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #fff;
+    margin-top: 1rem;
+    text-align: center;
+    animation: fadeInUp 1.5s ease-out;
+  }
+  
+  .content-wrapper {
+    text-align: center;
+    padding: 2.5rem;
+  }
+  
+  /* עד לפה העיצוב של הסירטון הראשי */
+  
+  
+  /* אודותינו */
+  .about {
+    padding: 40px 20px;
+    background: #111;
+    color: #fff;
+  }
+  
+  .about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .about-text {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .about-video {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+  }
+  
+  .about-video video {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* התאמות למכשירים ניידים */
+  @media (max-width: 768px) {
+    .about-content {
+      flex-direction: column;
+    }
+    .about-video video {
+      max-width: 300px;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* עיצוב אזור המאמרים והחדשות */
+  .articles {
+    padding: 80px 20px;
+    background: #f9f9f900;
+  }
+  
+  .articles-title {
+    font-size: 2.5rem;
+    color: #bcb9b9;
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: 'Rubik', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .articles-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+  
+  .article-item {
+    background: #181717;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(241, 238, 238, 0.676);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+  }
+  
+  .article-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(245, 238, 238, 0.884);
+  }
+  
+  .article-item img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .article-title {
+    font-size: 1.5rem;
+    color: #f1ebeb;
+    margin: 15px;
+    font-family: 'Rubik', sans-serif;
+  }
+  
+  .article-description {
+    font-size: 1rem;
+    color: #666;
+    margin: 0 15px 15px;
+    line-height: 1.6;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .article-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    .article-title {
+      font-size: 1.2rem;
+    }
+  
+    .article-description {
+      font-size: 0.9rem;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* עיצוב כללי */
+  .services {
+    padding: 60px 20px;
+    background: #f5f5f500;
+    overflow-x: auto; /* לאפשר גלילה אופקית */
+  }
+  
+  .services-title {
+    font-size: 3rem;
+    color: #dcd7d7;
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Rubik', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  /* רשימת השירותים */
+  .service-list {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #d4af37 transparent;
+  }
+  
+  /* פריט בודד */
+  .service-item {
+    min-width: 250px;
+    background: linear-gradient(135deg, #efba27f7, #eed637f9);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* אייקון השירות */
+  .service-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+  }
+  
+  .service-icon img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* כותרת השירות */
+  .service-title {
+    font-size: 1.5rem;
+    color: #444;
+    margin-bottom: 10px;
+    font-family: 'Rubik', sans-serif;
+    text-transform: capitalize;
+  }
+  
+  /* תיאור השירות */
+  .service-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  /* התאמה לנייד */
+  @media (max-width: 768px) {
+    .service-item {
+      min-width: 200px;
+    }
+  
+    .service-title {
+      font-size: 1.3rem;
+    }
+  
+    .service-description {
+      font-size: 0.9rem;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .decorative-border {
+      position: relative;
+      padding: 2rem;
+  }
+  
+  .corner {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .top-left {
+      top: 0;
+      left: 0;
+      border-right: none;
+      border-bottom: none;
+  }
+  
+  .top-right {
+      top: 0;
+      right: 0;
+      border-left: none;
+      border-bottom: none;
+  }
+  
+  .bottom-left {
+      bottom: 0;
+      left: 0;
+      border-right: none;
+      border-top: none;
+  }
+  
+  .bottom-right {
+      bottom: 0;
+      right: 0;
+      border-left: none;
+      border-top: none;
+  }
+  
+  .quote-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.9rem;
+      font-weight: 200;
+      letter-spacing: 8px;
+      line-height: 1.5;
+      background: linear-gradient(135deg, #ffffff, #d0d0d0);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+  }
+  
+  .quote-text.first {
+      animation: slideInLeft 1.5s ease-out;
+  }
+  
+  .quote-text.second {
+      animation: slideInRight 1.5s ease-out;
+  }
+  
+  @keyframes floatLogo {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+  }
+  
+  @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+  }
+  
+  @media (max-width: 768px) {
+      .brand-logo img {
+          width: 250px;
+      }
+  
+      .hebrew-text-small {
+          font-size: 1.2rem;
+      }
+  
+      .content-wrapper {
+          padding: 1.5rem;
+      }
+  
+      .quote-text {
+          font-size: 1.2rem;
+          letter-spacing: 5px;
+      }
+  
+      .corner {
+          width: 15px;
+          height: 15px;
+      }
+  }
+  
+  
+  
+  
+  .swiper-container {
+    width: 100%; /* ממלא את רוחב ההורה */
+    max-width: 900px; /* מגביל את הרוחב המקסימלי */
+    margin: 0 auto; /* ממרכז את הקרוסלה */
+    overflow: hidden; /* מונע overflow */
+    position: relative; /* למיקום נכון של האלמנטים */
+  }
+  
+  .swiper-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto; /* שומר על הרוחב האוטומטי */
+    height: auto; /* שומר על הגובה האוטומטי */
+    padding: 10px; /* מרווח בין הסרטונים */
+  }
+  
+  .video-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* ממלא את השקופית */
+    height: auto; /* גובה אוטומטי כדי לא לקבוע גובה */
+  }
+  
+  .video-card video {
+    width: 100%; /* ממלא את רוחב הכרטיס */
+    height: auto; /* משאיר את הגובה ביחס לתוכן */
+    display: block;
+    object-fit: contain; /* מבטיח שהווידאו יישאר בפרופורציה */
+    border-radius: 10px; /* עיגול פינות הווידאו */
+  }
+  
+  
+  
+  
+  
+  
+  
+  /*עיצוב הסירטון בלחיצה עליו איך הוא יראה וישמע  */
+  
+  
+  .video-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* רקע כהה */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .video-modal-content {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    background-color: transparent;
+    border: none;
+  }
+  
+  .video-modal-player {
+    width: 50%;
+    height: auto; /* שמירה על פרופורציות הסרטון */
+    display: block;
+    background: transparent;
+  }
+  
+  .video-modal-close {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #fff;
+    color: #000;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* עיצוב התעודות */
+  .image-gallery {
+    padding: 40px 20px;
+    background: #111;
+  }
+  
+  .image-gallery .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .image-gallery .column {
+    flex: 0 0 20%;
+    max-width: 200px;
+    padding: 10px;
+  }
+  
+  .image-gallery .column img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .image-gallery .column img:hover {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  
+  
+  
+  
+  
+  
+  /* צור קשר */
+  .contact {
+    padding: 50px 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .contact-map h2,
+  .contact-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #d4af37;
+  }
+  
+  .contact-map iframe {
+    width: 100%;
+    height: 350px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .contact-form .form-group {
+    position: relative;
+  }
+  
+  .contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #d4af37;
+    font-size: 1rem;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: none;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+  }
+  
+  .contact-form textarea {
+    height: 120px;
+  }
+  
+  .contact-form .btn {
+    padding: 15px;
+    background: #d4af37;
+    color: #000;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .contact-form .btn:hover {
+    background: #fff;
+    color: #d4af37;
+  }
+  
+  .contact-form .btn i {
+    margin-left: 8px;
+  }
+  
+  /* עיצוב מרחף */
+  .contact-map iframe,
+  .contact-form {
+    background: transparent;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+  }
+  
+  /* התאמה למסכים קטנים */
+  @media (max-width: 768px) {
+    .contact-container {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  /* עיצוב בר תחתון */
+  .footer {
+    background: #11111100;
+    color: #d4af37;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .footer-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #d4af37;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  
+  .footer-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  
+  .footer-section a {
+    color: #d4af37;
+    text-decoration: none;
+  }
+  
+  .footer-section a:hover {
+    color: #fff;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .social-icon {
+    display: inline-block;
+    background: #d4af37;
+    width: 50px; /* גודל העיגול */
+    height: 50px; /* גודל העיגול */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .social-icon img {
+    width: 24px; /* גודל האייקון */
+    height: 24px; /* גודל האייקון */
+  }
+  
+  .social-icon:hover {
+    background: #fff;
+    transform: scale(1.1); /* אפקט הגדלה */
+  }
+  
+  .social-icon img:hover {
+    filter: brightness(0.8);
+  }
+  
+  
+  .footer-bottom {
+    margin-top: 20px;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    padding-top: 10px;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(212, 175, 55, 0.8);
+  }
+  
+  /* התאמה למסכים קטנים */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  /*התמונה של עורך דין אהרוןכלפון */
+  .lawyer-photo {
+    position: absolute;
+    top: 20px;
+    right: -220px;
+    width: 750px !important; /* כופה את הרוחב */
+    height: auto !important; /* שומר על פרופורציות */
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+  }
+  
+  
+  
+  
+  
+  /* עיצוב אזור ההמלצות */
+  .testimonials {
+    padding: 50px 20px;
+    background-color: #f9f9f900;
+    text-align: center;
+  }
+  
+  .testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #f1bc4af5;
+  }
+  
+  .testimonials-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .testimonial-item {
+    flex: 0 0 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    scroll-snap-align: center;
+  }
+  
+  .testimonial-text {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .star-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .testimonial-author span {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  
+  
+  /* עיצוב התמונות של ההמלצות */
+  .testimonial-amount {
+    width: 100px;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
