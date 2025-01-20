@@ -1,21 +1,4 @@
-/* כללי */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    line-height: 1.6;
-    background: #000;
-    color: #fff;
-    text-align: center; /* מיקום טקסט במרכז */
-  }
-  
-  .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-  }
-  
+
   
   
   
@@ -102,6 +85,10 @@ body {
     color: #fff;
     border-bottom: 2px solid #d4af37;
   }
+
+
+
+  
   
   /* תפריט נפתח */
   .dropdown {
@@ -400,49 +387,85 @@ body {
   /* עד לפה העיצוב של הסירטון הראשי */
   
   
-  /* אודותינו */
-  .about {
-    padding: 40px 20px;
-    background: #111;
-    color: #fff;
+
+
+/* עיצוב הקטגוריות התמחות*/
+  .services {
+    padding: 60px 20px;
+    background: #f5f5f5;
   }
   
-  .about-content {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-  }
-  
-  .about-text {
-    flex: 1;
-    min-width: 300px;
-  }
-  
-  .about-video {
-    flex: 1;
-    min-width: 300px;
+  .service-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
     text-align: center;
   }
   
-  .about-video video {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  .service-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 15px;
   }
   
-  /* התאמות למכשירים ניידים */
-  @media (max-width: 768px) {
-    .about-content {
-      flex-direction: column;
-    }
-    .about-video video {
-      max-width: 300px;
-    }
+  .service-icon img {
+    width: 100%;
+    height: auto;
   }
+  
+  .service-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .service-description {
+    font-size: 1rem;
+  }
+  
+  .service-details {
+    display: none;
+    margin-top: 10px;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .service-details.active {
+    display: block;
+  }
+  
+  /* כפתור החץ */
+.toggle-details {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #0c1217;
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-details:hover {
+  color: #0056b3;
+  transform: scale(1.1); /* הגדלה קלה בהצבעה */
+}
+
+/* אייקון חץ */
+.toggle-details::after {
+  content: '▼'; /* חץ מטה */
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+/* חץ כלפי מעלה כאשר התוכן מוצג */
+.toggle-details.active::after {
+  content: '▲'; /* חץ מעלה */
+}
+
+  
+
   
   
   
